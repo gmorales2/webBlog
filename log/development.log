@@ -1,0 +1,2858 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20170608174623)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170608174623"]]
+  [1m[35m (18.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-06-08 17:47:49.184239"], ["updated_at", "2017-06-08 17:47:49.184239"]]
+  [1m[35m (27.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-06-08 11:51:39 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 36ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/psot" for 127.0.0.1 at 2017-06-08 11:52:16 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/psot"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/post" for 127.0.0.1 at 2017-06-08 11:52:21 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/post"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/posts/new" for 127.0.0.1 at 2017-06-08 11:52:38 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (22.3ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 1523ms (Views: 1488.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-06-08 11:53:23 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1gGQ5mpB2hr1nn3tTlP+wFVwdmmigKV7rKJELGmv/DOK675Ripp+QicmIGYAbtbAbPh96sOc89odReKBoyR50Q==", "post"=>{"title"=>"Hello world", "body"=>"Hello"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello world"], ["body", "Hello"], ["created_at", "2017-06-08 17:53:23.478422"], ["updated_at", "2017-06-08 17:53:23.478422"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 19ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 11:53:23 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 11:53:43 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-08 12:19:42 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.8ms)
+Completed 200 OK in 31ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-06-08 12:19:57 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/post" for 127.0.0.1 at 2017-06-08 12:20:07 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/post"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 12:20:14 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 418ms (Views: 411.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-06-08 12:20:17 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (28.6ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-06-08 12:20:19 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8WZvn0zMXZ0M7MG+1WdxStYsRTHRMsWsNBHiOJXKX+5Gc7p37Tb132TYYlnkmio317xAbxGs/0xxo88BgbFWQA==", "post"=>{"title"=>"", "body"=>""}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.7ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20170608182921)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170608182921"]]
+  [1m[35m (20.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_post_id' AND type='index'
+[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "SAy something funny"], ["created_at", "2017-06-08 19:32:42.284670"], ["updated_at", "2017-06-08 19:32:42.284670"]]
+  [1m[35m (28.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:54:00 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 542ms (Views: 515.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:53 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:54 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 69ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:55 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:55 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:55 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:55 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 13:57:56 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-06-08 13:57:57 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (29.9ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 13:58:01 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (67.3ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	
+    22:   	<%=render @post.comments %>
+    23: 
+    24:   </div>
+    25: 
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__1735827214307382557_33488120'
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 14:04:11 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 37ms (Views: 36.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-06-08 14:04:14 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.0ms) [cache miss]
+  Rendered posts/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 57ms (Views: 55.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:04:18 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	
+    22:   	<%=render @post.comments %>
+    23: 
+    24:   </div>
+    25: 
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__1735827214307382557_69977918029020'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:07:56 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (3.9ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (49.5ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comments', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3472501303781672755_27641620'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = ? LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:17:05 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (50.6ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comments', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__2918775595374189124_38228720'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:19:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (56.4ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__521072649517144621_30167580'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:26:11 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Post:0x00000003d78838>
+Did you mean?  comments
+               comments=):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comment %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_28895260'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:26:24 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `comment' for #<Post:0x0000000310d828>
+Did you mean?  comments
+               comments=):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comment %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_25712480'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:26:48 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (70.8ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_36184020'
+Started POST "/__web_console/repl_sessions/8ba156e2a9e8cb9ffbf3f90127578603/trace" for 127.0.0.1 at 2017-06-08 14:27:06 -0600
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:27:10 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_33274400'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:28:34 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23: 
+    24:   </div>
+    25:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_26991660'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:28:56 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial comments/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/giovanny/blog/app/views"
+):
+    19:  
+    20:   <div id="Comments">
+    21:   	<%#Expands to render partial: 'comments/comment', collection: @post.comments%>
+    22:   	<%= render @post.comments %>
+    23:   </div>
+    24:   <%= render 'comments/new', post: @post %>
+  
+app/views/posts/show.html.erb:22:in `_app_views_posts_show_html_erb__3491759854609192516_35792060'
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:31:57 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 437ms (Views: 396.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-06-08 14:32:16 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (29.9ms) [cache miss]
+  Rendered posts/edit.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 81ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 14:32:17 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 14:39:09 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 70ms (Views: 69.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:39:13 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:39:38 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 427ms (Views: 374.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 14:39:53 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 14:40:08 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 62ms (Views: 61.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:40:11 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [1 times] (0.5ms)
+  Rendered comments/_new.html.erb (19.7ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 107ms (Views: 105.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:46:09 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [1 times] (1.5ms)
+  Rendered comments/_new.html.erb (4.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 108ms (Views: 83.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 14:46:19 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"Hello from the form"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (10.9ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "Hello from the form"], ["created_at", "2017-06-08 20:46:19.479617"], ["updated_at", "2017-06-08 20:46:19.479617"]]
+  [1m[35m (18.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 44ms (ActiveRecord: 29.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 14:46:19 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.5ms)
+  Rendered comments/_new.html.erb (1.0ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 14:57:19 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (6.1ms)
+CommentsMailer#submitted: processed outbound mail in 20.2ms
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `post' for nil:NilClass):
+    1: <h1>You got a new comment on <%= @comment.post.title %></h1>
+    2: 
+    3: <% render @comment %>
+  
+app/views/comments_mailer/submitted.html.erb:1:in `_app_views_comments_mailer_submitted_html_erb___728886507717995076_42742180'
+app/mailers/comments_mailer.rb:11:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 14:59:41 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 15ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:02:34 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:02:37 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.4ms
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:02:38 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:05:30 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.5ms
+Completed 500 Internal Server Error in 2ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:07:24 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 7.1ms
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NameError (undefined local variable or method `comment' for #<CommentsMailer:0x0000000553cb40>):
+  
+app/mailers/comments_mailer.rb:9:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:07:41 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 11ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:12:04 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 16ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:12:06 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.4ms
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:12:06 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:12:07 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:13:34 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.4ms
+Completed 500 Internal Server Error in 10ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:13:57 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 14ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:13:59 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.5ms
+Completed 500 Internal Server Error in 4ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:13:59 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:00 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:06 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 5ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:06 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:07 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:08 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.2ms
+Completed 500 Internal Server Error in 1ms
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-08 15:14:25 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 176ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/" for 127.0.0.1 at 2017-06-08 15:17:21 -0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/giovanny/.rvm/gems/ruby-2.4.1/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (1.4ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 15:17:29 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 436ms (Views: 417.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 15:17:32 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.6ms)
+  Rendered comments/_new.html.erb (16.9ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 96ms (Views: 91.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 15:17:38 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", ""], ["created_at", "2017-06-08 21:17:38.403557"], ["updated_at", "2017-06-08 21:17:38.403557"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 14.6ms)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentsMAiler):
+  
+app/controllers/comments_controller.rb:7:in `create'
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 15:17:40 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", ""], ["created_at", "2017-06-08 21:17:40.623084"], ["updated_at", "2017-06-08 21:17:40.623084"]]
+  [1m[35m (58.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 59.5ms)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentsMAiler):
+  
+app/controllers/comments_controller.rb:7:in `create'
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 15:17:41 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", ""], ["created_at", "2017-06-08 21:17:41.142244"], ["updated_at", "2017-06-08 21:17:41.142244"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 11.2ms)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentsMAiler):
+  
+app/controllers/comments_controller.rb:7:in `create'
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 15:17:41 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", ""], ["created_at", "2017-06-08 21:17:41.311005"], ["updated_at", "2017-06-08 21:17:41.311005"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 17.3ms)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentsMAiler):
+  
+app/controllers/comments_controller.rb:7:in `create'
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 15:52:39 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 1041ms (Views: 1018.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 15:52:40 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:52:40 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 15:52:42 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [6 times] (0.7ms)
+  Rendered comments/_new.html.erb (19.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 112ms (Views: 107.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 15:52:47 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-06-08 15:52:51 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (7.1ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-06-08 15:52:57 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BFXEy5tirqu3jX2p+drU8JFVTEj9Ez+Ig6TlXzLHVxOzQBEjOpgG6d+53k7IJ4+NkMVJFj2NBWjGFshmJrxevQ==", "post"=>{"title"=>"test", "body"=>"test"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["body", "test"], ["created_at", "2017-06-08 21:52:57.968147"], ["updated_at", "2017-06-08 21:52:57.968147"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 30ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-08 15:52:57 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (1.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:52:58 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 15:52:58 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:52:58 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-06-08 15:53:11 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:53:11 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts" for 127.0.0.1 at 2017-06-08 15:53:14 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 50ms (Views: 49.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-08 15:53:17 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [6 times] (1.0ms)
+  Rendered comments/_new.html.erb (5.5ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/1/comments" for 127.0.0.1 at 2017-06-08 15:53:27 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello is that on\n"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "hello is that on\n"], ["created_at", "2017-06-08 21:53:27.069214"], ["updated_at", "2017-06-08 21:53:27.069214"]]
+  [1m[35m (42.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: a8326c7f-1d40-4fb1-8fb2-89a9358be583) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a6c03e810 @uri=#<URI::GID gid://blog/Comment/7>>
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 49.3ms)
+
+
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583] Performing ActionMailer::DeliveryJob (Job ID: a8326c7f-1d40-4fb1-8fb2-89a9358be583) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a75cc6c50 @uri=#<URI::GID gid://blog/Comment/7>>
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   [1m[36mPost Load (4.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   Rendered comments/_comment.html.erb (2.1ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (16.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583] CommentsMailer#submitted: processed outbound mail in 364.0ms
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583] Sent mail to to@example.org (5.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583] Date: Thu, 08 Jun 2017 15:53:27 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <5939c757b67ac_4bcd3fcd36017eec657d4@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5939c757b5a2a_4bcd3fcd36017eec6565";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5939c757b5a2a_4bcd3fcd36017eec6565
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on Hello world: hello is that on
+
+
+
+----==_mimepart_5939c757b5a2a_4bcd3fcd36017eec6565
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on Hello world</h1>
+
+<p>hello is that on
+ -- June 08, 2017 21:53</p>
+
+  </body>
+</html>
+
+----==_mimepart_5939c757b5a2a_4bcd3fcd36017eec6565--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [a8326c7f-1d40-4fb1-8fb2-89a9358be583] Performed ActionMailer::DeliveryJob (Job ID: a8326c7f-1d40-4fb1-8fb2-89a9358be583) from Async(mailers) in 371.08ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-08 15:53:47 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"Hello is that on\n"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "Hello is that on\n"], ["created_at", "2017-06-08 21:53:47.286612"], ["updated_at", "2017-06-08 21:53:47.286612"]]
+  [1m[35m (40.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 8b97261f-c97c-4e75-b5b4-db1a1ed8c011) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a8c059d98 @uri=#<URI::GID gid://blog/Comment/8>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 43.8ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011] Performing ActionMailer::DeliveryJob (Job ID: 8b97261f-c97c-4e75-b5b4-db1a1ed8c011) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a78041ab8 @uri=#<URI::GID gid://blog/Comment/8>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (6.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011] CommentsMailer#submitted: processed outbound mail in 72.9ms
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011] Sent mail to to@example.org (16.8ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011] Date: Thu, 08 Jun 2017 15:53:47 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <5939c76b687dc_4bcd3fcd36017eec659f2@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5939c76b678f4_4bcd3fcd36017eec658f2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5939c76b678f4_4bcd3fcd36017eec658f2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: Hello is that on
+
+
+
+----==_mimepart_5939c76b678f4_4bcd3fcd36017eec658f2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>Hello is that on
+ -- June 08, 2017 21:53</p>
+
+  </body>
+</html>
+
+----==_mimepart_5939c76b678f4_4bcd3fcd36017eec658f2--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [8b97261f-c97c-4e75-b5b4-db1a1ed8c011] Performed ActionMailer::DeliveryJob (Job ID: 8b97261f-c97c-4e75-b5b4-db1a1ed8c011) from Async(mailers) in 99.73ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-08 15:53:49 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"Hello is that on\n"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "Hello is that on\n"], ["created_at", "2017-06-08 21:53:49.164914"], ["updated_at", "2017-06-08 21:53:49.164914"]]
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 09cd7208-72fd-447b-8776-a2666dc6ca67) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a76f64600 @uri=#<URI::GID gid://blog/Comment/9>>
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 11.7ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67] Performing ActionMailer::DeliveryJob (Job ID: 09cd7208-72fd-447b-8776-a2666dc6ca67) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007f9a76f37128 @uri=#<URI::GID gid://blog/Comment/9>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (2.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67] CommentsMailer#submitted: processed outbound mail in 78.7ms
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67] Sent mail to to@example.org (16.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67] Date: Thu, 08 Jun 2017 15:53:49 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <5939c76d4571c_4bcd3fcd36017eec66166@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5939c76d42cb7_4bcd3fcd36017eec66057";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5939c76d42cb7_4bcd3fcd36017eec66057
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: Hello is that on
+
+
+
+----==_mimepart_5939c76d42cb7_4bcd3fcd36017eec66057
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>Hello is that on
+ -- June 08, 2017 21:53</p>
+
+  </body>
+</html>
+
+----==_mimepart_5939c76d42cb7_4bcd3fcd36017eec66057--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [09cd7208-72fd-447b-8776-a2666dc6ca67] Performed ActionMailer::DeliveryJob (Job ID: 09cd7208-72fd-447b-8776-a2666dc6ca67) from Async(mailers) in 109.43ms
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:54:23 -0600
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-08 15:54:24 -0600
+Started GET "/posts" for 127.0.0.1 at 2017-06-09 08:24:32 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 667ms (Views: 632.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:24:34 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:24:34 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:24:39 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [2 times] (4.9ms)
+  Rendered comments/_new.html.erb (11.8ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (74.4ms)
+Completed 200 OK in 124ms (Views: 106.1ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2017-06-09 08:24:44 -0600
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (8.3ms) [cache miss]
+  Rendered posts/edit.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 100ms (Views: 95.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mailer" for 127.0.0.1 at 2017-06-09 08:25:17 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/mailer"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:25:17 -0600
+Started GET "/mail" for 127.0.0.1 at 2017-06-09 08:25:24 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/mail"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/comments_mailer" for 127.0.0.1 at 2017-06-09 08:26:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/comments_mailer"):
+  
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rails/mailers/comments_mailer" for 127.0.0.1 at 2017-06-09 08:27:00 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer"}
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 274ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for 127.0.0.1 at 2017-06-09 08:27:04 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (0.5ms) [cache miss]
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (8.6ms)
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.3ms)
+CommentsMailer#submitted: processed outbound mail in 213.1ms
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/mailers/email.html.erb (3.5ms)
+Completed 200 OK in 235ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted?part=text%2Fhtml" for 127.0.0.1 at 2017-06-09 08:27:05 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (0.3ms) [cache miss]
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (3.1ms)
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.3ms)
+CommentsMailer#submitted: processed outbound mail in 17.6ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 32ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted?part=text%2Fplain" for 127.0.0.1 at 2017-06-09 08:28:44 -0600
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (9.1ms)
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.3ms)
+CommentsMailer#submitted: processed outbound mail in 23.9ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 35ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted.txt?part=text%2Fhtml" for 127.0.0.1 at 2017-06-09 08:28:46 -0600
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/html", "path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (3.9ms)
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.5ms)
+CommentsMailer#submitted: processed outbound mail in 26.8ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 35ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:30:12 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:30:12 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:30:14 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.5ms)
+  Rendered comments/_new.html.erb (1.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 53ms (Views: 51.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:31:12 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.5ms)
+  Rendered comments/_new.html.erb (1.0ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 48ms (Views: 46.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:31:12 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:31:12 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:31:23 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:31:23.700336"], ["updated_at", "2017-06-09 14:31:23.700336"]]
+  [1m[35m (67.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 9c741734-dfc7-48e0-ac94-8c28f7746012) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa02961aa28 @uri=#<URI::GID gid://blog/Comment/10>>
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 68.8ms)
+
+
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012] Performing ActionMailer::DeliveryJob (Job ID: 9c741734-dfc7-48e0-ac94-8c28f7746012) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x000000026a5688 @uri=#<URI::GID gid://blog/Comment/10>>
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   Rendered comments/_comment.html.erb (0.7ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (18.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012] CommentsMailer#submitted: processed outbound mail in 103.8ms
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012] Sent mail to to@example.org (32.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012] Date: Fri, 09 Jun 2017 08:31:23 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab13bddb72_67083fd014b0d3ac70a3@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab13bdb1b9_67083fd014b0d3ac69cd";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab13bdb1b9_67083fd014b0d3ac69cd
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab13bdb1b9_67083fd014b0d3ac69cd
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:31</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab13bdb1b9_67083fd014b0d3ac69cd--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [9c741734-dfc7-48e0-ac94-8c28f7746012] Performed ActionMailer::DeliveryJob (Job ID: 9c741734-dfc7-48e0-ac94-8c28f7746012) from Async(mailers) in 137.8ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:31:34 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:31:34.458433"], ["updated_at", "2017-06-09 14:31:34.458433"]]
+  [1m[35m (100.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: bf4f6550-631c-4ecd-9444-0a2e566c1435) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0294dd0e8 @uri=#<URI::GID gid://blog/Comment/11>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 102.6ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435] Performing ActionMailer::DeliveryJob (Job ID: bf4f6550-631c-4ecd-9444-0a2e566c1435) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa02940fda0 @uri=#<URI::GID gid://blog/Comment/11>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   Rendered comments/_comment.html.erb (5.0ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (16.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435] CommentsMailer#submitted: processed outbound mail in 92.9ms
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435] Sent mail to to@example.org (24.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435] Date: Fri, 09 Jun 2017 08:31:34 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab146a4188_67083fd014b0d3ac727a@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab146a19bc_67083fd014b0d3ac71d1";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab146a19bc_67083fd014b0d3ac71d1
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab146a19bc_67083fd014b0d3ac71d1
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:31</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab146a19bc_67083fd014b0d3ac71d1--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [bf4f6550-631c-4ecd-9444-0a2e566c1435] Performed ActionMailer::DeliveryJob (Job ID: bf4f6550-631c-4ecd-9444-0a2e566c1435) from Async(mailers) in 129.53ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:31:41 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:31:41.095923"], ["updated_at", "2017-06-09 14:31:41.095923"]]
+  [1m[35m (49.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: b72931c9-644b-42a6-9c0b-b92c1d2bc337) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028e27780 @uri=#<URI::GID gid://blog/Comment/12>>
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 53.5ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337] Performing ActionMailer::DeliveryJob (Job ID: b72931c9-644b-42a6-9c0b-b92c1d2bc337) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028db65f8 @uri=#<URI::GID gid://blog/Comment/12>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   Rendered comments/_comment.html.erb (0.7ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (40.6ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337] CommentsMailer#submitted: processed outbound mail in 77.1ms
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337] Sent mail to to@example.org (14.9ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337] Date: Fri, 09 Jun 2017 08:31:41 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab14d3f30f_67083fd014b0d3ac744a@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab14d3c7e5_67083fd014b0d3ac73b2";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab14d3c7e5_67083fd014b0d3ac73b2
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab14d3c7e5_67083fd014b0d3ac73b2
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:31</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab14d3c7e5_67083fd014b0d3ac73b2--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [b72931c9-644b-42a6-9c0b-b92c1d2bc337] Performed ActionMailer::DeliveryJob (Job ID: b72931c9-644b-42a6-9c0b-b92c1d2bc337) from Async(mailers) in 102.68ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:34:23 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:34:23.867169"], ["updated_at", "2017-06-09 14:34:23.867169"]]
+  [1m[35m (35.3ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: a12eb9b6-a4d1-4441-8c4f-247b480bf3c7) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa01c3a8a18 @uri=#<URI::GID gid://blog/Comment/13>>
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 36.1ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7] Performing ActionMailer::DeliveryJob (Job ID: a12eb9b6-a4d1-4441-8c4f-247b480bf3c7) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa01c220b28 @uri=#<URI::GID gid://blog/Comment/13>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   Rendered comments/_comment.html.erb (0.5ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (3.8ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7] CommentsMailer#submitted: processed outbound mail in 65.3ms
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7] Sent mail to to@example.org (27.9ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7] Date: Fri, 09 Jun 2017 08:34:23 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab1eff250b_67083fd014b0d3ac76a4@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab1eff1e5c_67083fd014b0d3ac751f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab1eff1e5c_67083fd014b0d3ac751f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab1eff1e5c_67083fd014b0d3ac751f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:34</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab1eff1e5c_67083fd014b0d3ac751f--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [a12eb9b6-a4d1-4441-8c4f-247b480bf3c7] Performed ActionMailer::DeliveryJob (Job ID: a12eb9b6-a4d1-4441-8c4f-247b480bf3c7) from Async(mailers) in 94.75ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:34:46 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:34:46.119342"], ["updated_at", "2017-06-09 14:34:46.119342"]]
+  [1m[35m (37.5ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 966f8ba6-15f4-42c7-b188-c4786ce11a55) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa025a0a060 @uri=#<URI::GID gid://blog/Comment/14>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 40.3ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55] Performing ActionMailer::DeliveryJob (Job ID: 966f8ba6-15f4-42c7-b188-c4786ce11a55) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa025767560 @uri=#<URI::GID gid://blog/Comment/14>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   Rendered comments/_comment.html.erb (0.5ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (20.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55] CommentsMailer#submitted: processed outbound mail in 72.0ms
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55] Sent mail to to@example.org (22.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55] Date: Fri, 09 Jun 2017 08:34:46 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab2063f466_67083fd014b0d3ac7845@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab2063c644_67083fd014b0d3ac7782";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab2063c644_67083fd014b0d3ac7782
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab2063c644_67083fd014b0d3ac7782
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:34</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab2063c644_67083fd014b0d3ac7782--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [966f8ba6-15f4-42c7-b188-c4786ce11a55] Performed ActionMailer::DeliveryJob (Job ID: 966f8ba6-15f4-42c7-b188-c4786ce11a55) from Async(mailers) in 109.75ms
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:35:09 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "hello"], ["created_at", "2017-06-09 14:35:09.135161"], ["updated_at", "2017-06-09 14:35:09.135161"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 02967a1e-ca90-4e88-ae8e-d8f4c6c518b2) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x00000003a51c18 @uri=#<URI::GID gid://blog/Comment/15>>
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 12.1ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2] Performing ActionMailer::DeliveryJob (Job ID: 02967a1e-ca90-4e88-ae8e-d8f4c6c518b2) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x0000000396fa20 @uri=#<URI::GID gid://blog/Comment/15>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (6.0ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2] CommentsMailer#submitted: processed outbound mail in 80.8ms
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2] Sent mail to to@example.org (24.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2] Date: Fri, 09 Jun 2017 08:35:09 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab21d3d357_67083fd014b0d3ac804e@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab21d3ada1_67083fd014b0d3ac79e3";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab21d3ada1_67083fd014b0d3ac79e3
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab21d3ada1_67083fd014b0d3ac79e3
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:35</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab21d3ada1_67083fd014b0d3ac79e3--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [02967a1e-ca90-4e88-ae8e-d8f4c6c518b2] Performed ActionMailer::DeliveryJob (Job ID: 02967a1e-ca90-4e88-ae8e-d8f4c6c518b2) from Async(mailers) in 107.27ms
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-09 08:35:18 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.7ms)
+  Rendered comments/_new.html.erb (1.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:35:18 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:35:18 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:35:18 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:35:28 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [8 times] (0.7ms)
+  Rendered comments/_new.html.erb (4.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:35:28 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:35:28 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:35:28 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-09 08:38:26 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (1.0ms)
+  Rendered comments/_new.html.erb (1.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:38:26 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:38:26 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:38:26 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:38:34 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [8 times] (0.7ms)
+  Rendered comments/_new.html.erb (1.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:38:34 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:38:34 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:38:34 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/2/comments" for 127.0.0.1 at 2017-06-09 08:39:10 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"test"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "test"], ["created_at", "2017-06-09 14:39:10.841526"], ["updated_at", "2017-06-09 14:39:10.841526"]]
+  [1m[35m (37.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028e43638 @uri=#<URI::GID gid://blog/Comment/16>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 38.6ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780] Performing ActionMailer::DeliveryJob (Job ID: 7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028e6e4c8 @uri=#<URI::GID gid://blog/Comment/16>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   Rendered comments/_comment.html.erb (0.5ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (4.9ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780] CommentsMailer#submitted: processed outbound mail in 68.7ms
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780] Sent mail to to@example.org (32.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780] Date: Fri, 09 Jun 2017 08:39:10 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab30eec022_67083fd014b0d3ac8276@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab30eeb257_67083fd014b0d3ac817d";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab30eeb257_67083fd014b0d3ac817d
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: test
+
+
+----==_mimepart_593ab30eeb257_67083fd014b0d3ac817d
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>test -- June 09, 2017 14:39</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab30eeb257_67083fd014b0d3ac817d--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780] Performed ActionMailer::DeliveryJob (Job ID: 7ee44cc0-8e8c-4ba9-b3ce-6faad4be4780) from Async(mailers) in 104.61ms
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:39:13 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [9 times] (1.1ms)
+  Rendered comments/_new.html.erb (1.4ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 48ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:39:14 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:39:14 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:39:14 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for 127.0.0.1 at 2017-06-09 08:39:16 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (15.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered collection of comments/_comment.html.erb [9 times] (0.8ms)
+  Rendered comments/_new.html.erb (1.3ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 66ms (Views: 46.4ms | ActiveRecord: 15.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:39:16 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:39:16 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:39:16 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts" for 127.0.0.1 at 2017-06-09 08:48:34 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 61ms (Views: 56.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:48:41 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:48:41 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:48:41 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:48:41 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/1" for 127.0.0.1 at 2017-06-09 08:48:49 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered collection of comments/_comment.html.erb [7 times] (0.8ms)
+  Rendered comments/_new.html.erb (3.0ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2017-06-09 08:49:02 -0600
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (6.0ms) [cache miss]
+  Rendered posts/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2017-06-09 08:49:09 -0600
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ypLDqWnPD/S5BFB4Oznp8/YptvTDPSGbmEw9hxSnX+QUugqb0tgt5dM5i3JYVXMZ39pTkZhKESK6MF+bJM/XOQ==", "post"=>{"title"=>"test", "body"=>"test"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["body", "test"], ["created_at", "2017-06-09 14:49:09.023793"], ["updated_at", "2017-06-09 14:49:09.023793"]]
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 19ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:49:09 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered comments/_new.html.erb (2.6ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:09 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:49:09 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:09 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:49:22 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of templates [0 times] (0.1ms)
+  Rendered comments/_new.html.erb (1.4ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:22 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:49:22 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:22 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/3/comments" for 127.0.0.1 at 2017-06-09 08:49:29 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"hello"}, "commit"=>"Create Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 3], ["body", "hello"], ["created_at", "2017-06-09 14:49:29.545311"], ["updated_at", "2017-06-09 14:49:29.545311"]]
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 723c6d54-ada4-4e9a-b76e-ba29269f157d) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa026a2f710 @uri=#<URI::GID gid://blog/Comment/17>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 14.3ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d] Performing ActionMailer::DeliveryJob (Job ID: 723c6d54-ada4-4e9a-b76e-ba29269f157d) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0268f3a40 @uri=#<URI::GID gid://blog/Comment/17>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   Rendered comments/_comment.html.erb (4.6ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (12.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.6ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d] CommentsMailer#submitted: processed outbound mail in 88.1ms
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d] Sent mail to to@example.org (27.9ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d] Date: Fri, 09 Jun 2017 08:49:29 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab579a7eeb_67083fd014b0d3ac8410@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab579a3f18_67083fd014b0d3ac83a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab579a3f18_67083fd014b0d3ac83a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: hello
+
+
+----==_mimepart_593ab579a3f18_67083fd014b0d3ac83a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>hello -- June 09, 2017 14:49</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab579a3f18_67083fd014b0d3ac83a0--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [723c6d54-ada4-4e9a-b76e-ba29269f157d] Performed ActionMailer::DeliveryJob (Job ID: 723c6d54-ada4-4e9a-b76e-ba29269f157d) from Async(mailers) in 128.03ms
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:49:33 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [1 times] (0.5ms)
+  Rendered comments/_new.html.erb (1.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:33 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:49:33 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:33 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:49:42 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [1 times] (0.5ms)
+  Rendered comments/_new.html.erb (1.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:42 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:49:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:49:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/3/comments" for 127.0.0.1 at 2017-06-09 08:50:58 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 3], ["body", ""], ["created_at", "2017-06-09 14:50:59.020923"], ["updated_at", "2017-06-09 14:50:59.020923"]]
+  [1m[35m (38.1ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 2c14d57c-fb84-4c9e-9119-09f7a678df89) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0288ce068 @uri=#<URI::GID gid://blog/Comment/18>>
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 49.1ms)
+
+
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89] Performing ActionMailer::DeliveryJob (Job ID: 2c14d57c-fb84-4c9e-9119-09f7a678df89) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0287808a0 @uri=#<URI::GID gid://blog/Comment/18>>
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   Rendered comments/_comment.html.erb (5.3ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (30.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89] CommentsMailer#submitted: processed outbound mail in 47.3ms
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89] Sent mail to to@example.org (7.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89] Date: Fri, 09 Jun 2017 08:50:59 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab5d346720_67083fd014b0d3ac86f@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab5d346091_67083fd014b0d3ac8582";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab5d346091_67083fd014b0d3ac8582
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: 
+
+
+----==_mimepart_593ab5d346091_67083fd014b0d3ac8582
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p> -- June 09, 2017 14:50</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab5d346091_67083fd014b0d3ac8582--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [2c14d57c-fb84-4c9e-9119-09f7a678df89] Performed ActionMailer::DeliveryJob (Job ID: 2c14d57c-fb84-4c9e-9119-09f7a678df89) from Async(mailers) in 59.06ms
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:51:01 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.5ms)
+  Rendered comments/_new.html.erb (4.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 67ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:51:02 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:51:02 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:51:06 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:51:06 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:52:03 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [2 times] (0.6ms)
+  Rendered comments/_new.html.erb (1.8ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 96ms (Views: 67.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:52:03 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:52:03 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/3/comments" for 127.0.0.1 at 2017-06-09 08:52:05 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 3], ["body", ""], ["created_at", "2017-06-09 14:52:05.261321"], ["updated_at", "2017-06-09 14:52:05.261321"]]
+  [1m[35m (22.7ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 606c32f4-5882-4c11-99de-3731b16f66f6) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa029414828 @uri=#<URI::GID gid://blog/Comment/19>>
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 23.5ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6] Performing ActionMailer::DeliveryJob (Job ID: 606c32f4-5882-4c11-99de-3731b16f66f6) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0292f7378 @uri=#<URI::GID gid://blog/Comment/19>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   Rendered comments/_comment.html.erb (0.8ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (41.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6] CommentsMailer#submitted: processed outbound mail in 80.2ms
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6] Sent mail to to@example.org (15.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6] Date: Fri, 09 Jun 2017 08:52:05 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab61567520_67083fd014b0d3ac884c@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab61564a20_67083fd014b0d3ac87bd";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab61564a20_67083fd014b0d3ac87bd
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: 
+
+
+----==_mimepart_593ab61564a20_67083fd014b0d3ac87bd
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p> -- June 09, 2017 14:52</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab61564a20_67083fd014b0d3ac87bd--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [606c32f4-5882-4c11-99de-3731b16f66f6] Performed ActionMailer::DeliveryJob (Job ID: 606c32f4-5882-4c11-99de-3731b16f66f6) from Async(mailers) in 105.06ms
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:52:07 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [3 times] (3.3ms)
+  Rendered comments/_new.html.erb (1.3ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:52:07 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:52:07 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:52:07 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:52:09 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:52:09 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:53:22 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [3 times] (0.6ms)
+  Rendered comments/_new.html.erb (11.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 98ms (Views: 79.4ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:53:22 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:53:22 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/3/comments" for 127.0.0.1 at 2017-06-09 08:53:29 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"test"}, "commit"=>"Create Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 3], ["body", "test"], ["created_at", "2017-06-09 14:53:29.643493"], ["updated_at", "2017-06-09 14:53:29.643493"]]
+  [1m[35m (8.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 39454ef5-424f-4473-9c7d-e0c19d4e45f8) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028704980 @uri=#<URI::GID gid://blog/Comment/20>>
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 10.6ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8] Performing ActionMailer::DeliveryJob (Job ID: 39454ef5-424f-4473-9c7d-e0c19d4e45f8) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa028627d50 @uri=#<URI::GID gid://blog/Comment/20>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   Rendered comments/_comment.html.erb (0.4ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (5.5ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8] CommentsMailer#submitted: processed outbound mail in 85.9ms
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8] Sent mail to to@example.org (21.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8] Date: Fri, 09 Jun 2017 08:53:29 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab669bc6cd_67083fd014b0d3ac90aa@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab669baa95_67083fd014b0d3ac898f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab669baa95_67083fd014b0d3ac898f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: test
+
+
+----==_mimepart_593ab669baa95_67083fd014b0d3ac898f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>test -- June 09, 2017 14:53</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab669baa95_67083fd014b0d3ac898f--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [39454ef5-424f-4473-9c7d-e0c19d4e45f8] Performed ActionMailer::DeliveryJob (Job ID: 39454ef5-424f-4473-9c7d-e0c19d4e45f8) from Async(mailers) in 120.12ms
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:53:31 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:53:31 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:53:32 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [4 times] (0.7ms)
+  Rendered comments/_new.html.erb (1.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:53:32 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:53:32 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:53:32 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 08:54:19 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [4 times] (0.7ms)
+  Rendered comments/_new.html.erb (1.8ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 106ms (Views: 81.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:54:20 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:54:20 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/3/comments" for 127.0.0.1 at 2017-06-09 08:54:23 -0600
+Processing by CommentsController#create as JS
+  Parameters: {"utf8"=>"✓", "comment"=>{"body"=>"test"}, "commit"=>"Create Comment", "post_id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 3], ["body", "test"], ["created_at", "2017-06-09 14:54:23.559170"], ["updated_at", "2017-06-09 14:54:23.559170"]]
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: c3942119-4ef7-4136-a231-d794b973f6d5) to Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa02672abf0 @uri=#<URI::GID gid://blog/Comment/21>>
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 11.4ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5] Performing ActionMailer::DeliveryJob (Job ID: c3942119-4ef7-4136-a231-d794b973f6d5) from Async(mailers) with arguments: "CommentsMailer", "submitted", "deliver_now", #<GlobalID:0x007fa0266c4ff8 @uri=#<URI::GID gid://blog/Comment/21>>
+  
+NoMethodError (undefined method `broadcast' for CommentsChannel:Class
+Did you mean?  broadcast_to):
+  
+app/controllers/comments_controller.rb:8:in `create'
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   Rendered comments/_comment.html.erb (0.6ms) [cache miss]
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (28.0ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (0.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5] CommentsMailer#submitted: processed outbound mail in 95.3ms
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5] Sent mail to to@example.org (12.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5] Date: Fri, 09 Jun 2017 08:54:23 -0600
+From: from@example.com
+To: to@example.org
+Message-ID: <593ab69fafbd6_67083fd014b0d3ac921c@giovanny-VirtualBox.mail>
+Subject: New comment
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_593ab69fa93f4_67083fd014b0d3ac91ac";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_593ab69fa93f4_67083fd014b0d3ac91ac
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+You got a new comment on test: test
+
+
+----==_mimepart_593ab69fa93f4_67083fd014b0d3ac91ac
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>You got a new comment on test</h1>
+
+<p>test -- June 09, 2017 14:54</p>
+
+  </body>
+</html>
+
+----==_mimepart_593ab69fa93f4_67083fd014b0d3ac91ac--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [c3942119-4ef7-4136-a231-d794b973f6d5] Performed ActionMailer::DeliveryJob (Job ID: c3942119-4ef7-4136-a231-d794b973f6d5) from Async(mailers) in 133.64ms
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 08:54:28 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 08:54:28 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 09:01:36 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [5 times] (0.7ms)
+  Rendered comments/_new.html.erb (7.2ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 84ms (Views: 60.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 09:01:36 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 09:01:36 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 09:01:38 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [5 times] (0.7ms)
+  Rendered comments/_new.html.erb (1.6ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 74ms (Views: 73.0ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 09:01:38 -0600
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 09:01:38 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 09:01:38 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 09:01:43 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 09:01:43 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/" for 127.0.0.1 at 2017-06-09 10:40:28 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/railties-5.1.1/lib/rails/templates/rails/welcome/index.html.erb (7.5ms)
+Completed 200 OK in 34ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-06-09 10:40:36 -0600
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 1040ms (Views: 1015.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-06-09 10:40:42 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-06-09 10:40:42 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"CommentsChannel\"}"}) [SyntaxError - /home/giovanny/blog/app/channels/comments_channel.rb:5: syntax error, unexpected ':', expecting '}'
+...mentsController.render{partial: 'comments/comment', locals: ...
+...                               ^
+/home/giovanny/blog/app/channels/comments_channel.rb:5: syntax error, unexpected ',', expecting '}'
+...er{partial: 'comments/comment', locals: {comment: comment}} 
+...                               ^]: /var/lib/gems/2.3.0/gems/activesupport-5.1.1/lib/active_support/dependencies.rb:476:in `load' | /var/lib/gems/2.3.0/gems/activesupport-5.1.1/lib/active_support/dependencies.rb:476:in `block in load_file' | /var/lib/gems/2.3.0/gems/activesupport-5.1.1/lib/active_support/dependencies.rb:661:in `new_constants_in' | /var/lib/gems/2.3.0/gems/activesupport-5.1.1/lib/active_support/dependencies.rb:475:in `load_file' | /var/lib/gems/2.3.0/gems/activesupport-5.1.1/lib/active_support/dependencies.rb:374:in `block in require_or_load'
+Started GET "/posts/3" for 127.0.0.1 at 2017-06-09 10:40:44 -0600
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered collection of comments/_comment.html.erb [5 times] (1.0ms)
+  Rendered comments/_new.html.erb (14.1ms) [cache miss]
+  Rendered posts/show.html.erb within layouts/application (72.9ms)
+Completed 200 OK in 117ms (Views: 108.0ms | ActiveRecord: 1.0ms)
+
+
